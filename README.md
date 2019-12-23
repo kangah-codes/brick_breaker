@@ -8,5 +8,3 @@ __*Infinite levels, Infinite bricks, Infinite fun...*__
 ![img](shots/1.png)
 
 ![img](shots/2.png)
-
-![img](shots/3.png)
