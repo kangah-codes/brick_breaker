@@ -16,4 +16,14 @@ DT = FPS * 0.00005
 
 clock = pygame.time.Clock()
 
-SCREEN_WIDTH, SCREEN_HEIGHT = 600, 500
+SCREEN_WIDTH, SCREEN_HEIGHT = 800, 500
+
+"""
+Difficulty Levels:
+1 = Easy
+2 = Normal
+3 = Hard
+4 = Impossible
+"""
+
+DIFFICULTY = 1

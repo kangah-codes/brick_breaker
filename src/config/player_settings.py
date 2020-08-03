@@ -1,5 +1,11 @@
 from .settings import *
 
+# player variables
+NORMAL_SPEED = 8
+SLOW_SPEED = 3.5
+FAST_SPEED = 10
+Y_LOCATION = 450
+
 # load player sprites
 player_sprites = {
 	'healthy': [

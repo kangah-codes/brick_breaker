@@ -10,10 +10,10 @@ class Player(pygame.sprite.Sprite):
 		self.state = 'healthy'
 		
 		self.image = Animation(player_sprites.get(self.state), 0.25)
-		self.speed = 1
+		self.speed = NORMAL_SPEED
 		self.pos = pygame.math.Vector2()
 		self.pos.x = 100
-		self.pos.y = 100
+		self.pos.y = Y_LOCATION
 		self.rect = self.image.get_rect()
 
 	def update_state(self, state):
@@ -21,7 +21,7 @@ class Player(pygame.sprite.Sprite):
 		# only creating an animated sprite if we have 2 or more sprites in the state
 		self.image = Animation(player_sprites.get(self.state), SCALE) if len(player_sprites.get(self.state)) > 1 else player_sprites.get(self.state)[0]
 		# setting player speeds based on player state
-		self.speed = 1 if self.state == 'healthy' else 0.5 if self.state == 'slow' else 2 if self.state == 'fast' else 1
+		self.speed = NORMAL_SPEED if self.state == 'healthy' else SLOW_SPEED if self.state == 'slow' else FAST_SPEED if self.state == 'fast' else NORMAL_SPEED
 
 	def update(self):
 		# updating our player only if it is an animation
@@ -51,30 +51,3 @@ class Player(pygame.sprite.Sprite):
 		else:
 			drawImage = self.image
 		display.blit(drawImage, (self.pos.x, self.pos.y))
-
-
-p = Player()
-
-
-def game():
-	clock.tick(FPS)
-	screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-
-	running = True
-
-	while running:
-		for event in pygame.event.get():
-			if event.type == pygame.QUIT:
-				pygame.quit()
-				exit()
-			if event.type == pygame.KEYDOWN:
-				if event.key == pygame.K_SPACE:
-					states = ['healthy', 'shrunk', 'fast', 'slow', 'kill_row']
-					p.update_state(random.choice(states))
-					
-		screen.fill((0,0,0))
-
-		p.update()
-		p.draw(screen)
-
-		pygame.display.update()
