@@ -1,7 +1,9 @@
 __author__ = "Joshua Akangah"
 
 import pygame
-from config.settings import *
+import os
+import config
+#from config.settings import *
 
 #screen = pygame.display.set_mode((600, 500))
 pygame.init()
@@ -21,8 +23,8 @@ class FadingText():
         self.color = color
         self.size = size
         self.speed = fadespeed
-        self.font = pygame.font.Font(os.path.join(BASE_DIR, os.path.join("assets","retro.ttf")), self.size)
-        self.font1 = pygame.font.Font(os.path.join(BASE_DIR, os.path.join("assets","retro.ttf")), 30)
+        self.font = pygame.font.Font(os.path.join(config.settings.BASE_DIR, os.path.join("assets","retro.ttf")), self.size)
+        self.font1 = pygame.font.Font(os.path.join(config.settings.BASE_DIR, os.path.join("assets","retro.ttf")), 30)
         self.rendered = None
         self.alpha = 255
 
