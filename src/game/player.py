@@ -1,4 +1,5 @@
 from config.settings import *
+from config.player_settings import *
 from .animate import *
 
 class Player(pygame.sprite.Sprite):
@@ -68,7 +69,7 @@ def game():
 				exit()
 			if event.type == pygame.KEYDOWN:
 				if event.key == pygame.K_SPACE:
-					states = ['healthy', 'shrunk', 'fast', 'slow']
+					states = ['healthy', 'shrunk', 'fast', 'slow', 'kill_row']
 					p.update_state(random.choice(states))
 					
 		screen.fill((0,0,0))
