@@ -27,3 +27,5 @@ Difficulty Levels:
 """
 
 DIFFICULTY = 1
+
+BALL_SPEED = 8

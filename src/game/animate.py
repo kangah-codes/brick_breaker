@@ -30,6 +30,8 @@ class Animation():
         self.animation_frames = len(self.images)
         self.current_frame = 0
         self.index = 0
+        # self.image = self.get_current_image()
+        # self.rect = self.get_current_image().get_rect()
 
     def animate(self, dt):
         """
